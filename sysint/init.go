@@ -2,5 +2,5 @@ package sysint
 
 func init() {
 	sysint()
-	dbinit("")
+	dbinit("w")
 }

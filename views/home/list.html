@@ -16,19 +16,19 @@
             </form>
         </div>
         {{range $idx,$cate:=.Cates}}
-            {{if and (eq $cate.Pid 0) (gt $cate.Cnt 0)}}
+            {{if and (eq $cate.Pid 0) (gt $cate.Num 0)}}
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <!--这里不显示一级分类的计数，主要是为了避免误导用户，因为一本书籍，可能属于多个子分类，但是一级分类下的计数并不是所有子分类计数的和-->
-                            <a href="{{urlfor "ExploreController.Index"}}?cid={{$cate.Id}}" title="{{$cate.Title}}"><i class="fa fa-th"></i> {{$cate.Title}} <!-- （{{$cate.Cnt}}） --></a>
+                            <a href="" title="{{$cate.Name}}"><i class="fa fa-th"></i> {{$cate.Name}} <!-- （{{$cate.Num}}） --></a>
                         </h3>
                     </div>
                     <div class="panel-body" style="padding-left: 0px;padding-right:0px;margin-left: -8px;margin-right: -8px;">
                         {{range $idx1,$children:=$.Cates}}
-                            {{if and (gt $children.Cnt 0) (eq $cate.Id $children.Pid)}}
+                            {{if and (gt $children.Num 0) (eq $cate.Id $children.Pid)}}
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="cate-item clearfix" data-placement="bottom" title="{{$children.Intro}}">
+                                <div class="cate-item clearfix" data-placement="bottom" title="{{$children.Desc}}">
                                     <div>
                                         <a href="" title="" class="pull-left"><img onerror="this.src='/static/images/cate.png'" src="" alt=""></a>
                                         <a href="" title="" ></a>
@@ -42,8 +42,6 @@
                 </div>
             {{end}}
         {{end}}
-
-
 
     </div>
 </div>

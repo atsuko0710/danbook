@@ -3,6 +3,7 @@ package sysint
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func dbinit(aliases ...string) {

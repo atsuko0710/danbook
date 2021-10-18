@@ -13,5 +13,5 @@ func init() {
 	beego.Router("/category", &controllers.HomeController{}, "get:Category")
 
 	// 图书
-	beego.Router("/book/:key", &controllers.BookController{}, "get:Detail")
+	// beego.Router("/book/:key", &controllers.BookController{}, "get:Detail")
 }
