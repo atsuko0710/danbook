@@ -1,7 +1,13 @@
 package models
 
-func init() {
+import "github.com/astaxie/beego/orm"
 
+func init() {
+	orm.RegisterModel(
+		new(Book),
+		new(BookCategory),
+		new(Category),
+	)
 }
 
 func TNCategory() string {

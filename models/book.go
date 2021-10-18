@@ -7,3 +7,7 @@ type Book struct {
 	Sort     int
 	Desc     string
 }
+
+func (m *Book) TableName() string {
+	return TNBook()
+}
